@@ -1,0 +1,207 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<p>
+{% if request.user.is_superuser is False %}
+<div align="center">
+<div class="card-deck" align="center">
+             <div class="card text-white bg-dark mb-3 text-center" style="max-width: 49rem;">
+
+    <div class="card-body">
+      <h4 class="card-title">MARCI DE MASINI</h4>
+                    <h5 class="card-text">Puteti accesa fiecare marca de masina apasand pe butonul cu numele marcii
+                        dorite.</h5>
+         <br>
+                    <a class="btn btn-success" href="{% url 'carApp:mercedes' %}" style="font-size: 20px;">MERCEDES</a>
+                    <a class="btn btn-success" href="{% url 'carApp:audi' %}" style="font-size: 20px;">AUDI</a>
+                    <a class="btn btn-success" href="{% url 'carApp:opel' %}" style="font-size: 20px;">OPEL</a>
+                    <a class="btn btn-success" href="{% url 'carApp:mazda' %}" style="font-size: 20px;">MAZDA</a>
+                    <a class="btn btn-success" href="{% url 'carApp:bmw' %}" style="font-size: 20px;">BMW</a>
+                            <br>
+                    <br>
+                    <a class="btn btn-success" href="{% url 'carApp:vw' %}" style="font-size: 20px;">VOLKSWAGEN</a>
+
+
+                    <a class="btn btn-success" href="{% url 'carApp:ford' %}" style="font-size: 20px;">FORD</a>
+                    <a class="btn btn-success" href="{% url 'carApp:dacia' %}" style="font-size: 20px;">DACIA</a>
+                    <a class="btn btn-success" href="{% url 'carApp:skoda' %}" style="font-size: 20px;">SKODA</a>
+                            <br>
+                    <br>
+                    <a class="btn btn-success" href="{% url 'carApp:seat' %}" style="font-size: 20px;">SEAT</a>
+                    <a class="btn btn-success" href="{% url 'carApp:honda' %}" style="font-size: 20px;">HONDA</a>
+                    <a class="btn btn-success" href="{% url 'carApp:peugeot' %}" style="font-size: 20px;">PEUGEOT</a>
+                    <a class="btn btn-success" href="{% url 'carApp:lista_masini' %}" style="font-size: 20px;">ALL</a>
+                    <br>
+                    <br>
+    </div>
+
+  </div>
+           <div class="card text-white bg-dark mb-3 text-center" style="max-width: 51rem;">
+
+    <div class="card-body">
+      <h4 class="card-title">TIPUL COMBUSTIBILULUI</h4>
+                    <h5 class="card-text">Puteti accesa masinile care au un anumit tip de combustibil apasand pe butonul
+                        cu numele combustibilului dorit.</h5>
+                    <br>
+                    <br>
+
+                    <a class="btn btn-success" href="{% url 'carApp:diesel' %}" style="font-size: 20px;">DIESEL</a>
+
+                    <a class="btn btn-success" href="{% url 'carApp:benzina' %}" style="font-size: 20px;">BENZINA</a>
+                    <br>
+                    <br>
+                    <a class="btn btn-success" href="{% url 'carApp:hybrid' %}" style="font-size: 20px;">HYBRID</a>
+
+                    <a class="btn btn-success" href="{% url 'carApp:electric' %}" style="font-size: 20px;">ELECTRIC</a>
+                    <br>
+                    <br>
+    </div>
+
+  </div>
+           <div class="card text-white bg-dark mb-3 text-center" style="max-width: 51rem;">
+
+    <div class="card-body">
+     <h4 class="card-title">CAPACITATE MOTOR</h4>
+                    <h5 class="card-text">Puteti accesa masinile care au o anumita capacitate a motorului apasand pe
+                        butonul
+                        cu motorizarea dorita.</h5>
+                    <br>
+
+                    <a class="btn btn-success" href="{% url 'carApp:motor12' %}" style="font-size: 20px;">Motor de 1.2</a>
+                    <a class="btn btn-success" href="{% url 'carApp:motor14' %}" style="font-size: 20px;">Motor de 1.4</a>
+                <br>
+        <br>
+                    <a class="btn btn-success" href="{% url 'carApp:motor16' %}" style="font-size: 20px;">Motor de 1.6</a>
+
+                    <a class="btn btn-success" href="{% url 'carApp:motor18' %}" style="font-size: 20px;">Motor de 1.8</a>
+                <br>
+        <br>
+                    <a class="btn btn-success" href="{% url 'carApp:motor20' %}" style="font-size: 20px;">Motor de 2.0</a>
+                    <a class="btn btn-success" href="{% url 'carApp:motor22' %}" style="font-size: 20px;">Motor de 2.2</a>
+                    <br>
+                    <br>
+    </div>
+
+  </div>
+
+
+    <div class="card text-white bg-dark mb-3 text-center" style="max-width: 51rem;">
+
+    <div class="card-body">
+     <h4 class="card-title">CUTIE DE VITEZE</h4>
+                    <h5 class="card-text">Puteti accesa masinile care au o anumita cutie de viteze apasand pe
+                        butonul
+                        cu tipul dorit.</h5>
+                    <br>
+                    <br>
+
+                    <a class="btn btn-success" href="{% url 'carApp:automat' %}" style="font-size: 20px;">Cutie de viteze AUTOMATA</a>
+<br>
+        <br>
+        <br>
+                    <a class="btn btn-success" href="{% url 'carApp:manual' %}" style="font-size: 20px;">Cutie de viteze MANUALA</a>
+
+                    <br>
+                    <br>
+    </div>
+
+  </div>
+</div>
+</div>
+
+{% endif %}
+</p>
+<br>
+        <table class="table table-bordered table-striped border-black">
+            <thead class="thead-dark">
+            {% if request.user.is_superuser %}
+            <tr>
+                <th>Index</th>
+                <th>Marca</th>
+                <th>Model</th>
+                <th>Anul aparitiei</th>
+                <th>Tip combustibil</th>
+                <th>Motor</th>
+                <th>Cai putere (HP)</th>
+                <th>Consum</th>
+                <th>Cutie de viteze</th>
+                <th>Pret</th>
+                 <th>ID locatie</th>
+                <th>Poza</th>
+                <th>Stare</th>
+                <th>Actions</th>
+            </tr>
+            {% endif %}
+            </thead>
+            <tbody>
+
+            <div class="col-md-12">
+                <div class="row">
+                    {% for item in carsL %}
+                    {% if request.user.is_superuser is False %}
+                    <div class="col-md-3">
+                        <div class="card" style="width: 35rem;" align="center">
+                            <img class="card-img-top" src="{{ item.poza.url }}" alt="Card image cap" width="500"
+                                 height="300">
+                            <div class="card-body">
+                                <h5 class="card-title" style="font-size: 25px;"><b>{{ item.marca }}
+                                    {{ item.model }}</b>
+                                </h5>
+                                <a class="btn btn-success" href="{% url 'carApp:carDetails' item.id %}"
+                                   >DETALII</a>
+                            </div>
+
+                        </div>
+                        <br>
+                    </div>
+
+
+                    {% elif request.user.is_superuser %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ item.marca }}</td>
+                        <td>{{ item.model }}</td>
+                        <td>{{ item.an_aparitie }}</td>
+                        <td>{{ item.combustibil }}</td>
+                        <td>{{ item.motorizare }}</td>
+                        <td>{{ item.cai_putere }}</td>
+                        <td>{{ item.consum }}</td>
+                        <td>{{ item.cutie }}</td>
+                        <td>{{ item.pret }}</td>
+                        <td>{{ item.location_id }}</td>
+
+                        <td>
+                            <img src="{{ item.poza.url }}" width="500" height="300">
+                        </td>
+                        <td>
+                            {% if item.active == 1 %}
+                            <span>Active</span>
+                            {% else %}
+                            <span>Inactive</span>
+                            {% endif %}
+                        </td>
+                        <td><a class="btn btn-success" href="{% url 'carApp:updateCar' item.id %}"
+                               >EDITEAZA</a>
+                            {% if item.active == 1 %}
+                            <br>
+                            <br>
+                            <a class="btn btn-danger" href="{% url 'carApp:deleteCar' item.id %}"
+                               >STERGE</a>
+                            <br>
+                            <br>
+                            {% else %}
+                            <a class="btn btn-info" href="{% url 'carApp:activateCar' item.id %}"
+                              >ACTIVEAZA</a>
+                            <br>
+                            <br>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+            </tbody>
+        </table>
+
+        {% endblock %}

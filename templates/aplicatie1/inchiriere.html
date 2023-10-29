@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% block content %}
+<center>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1>Finalizeaza inchirierea masinii alegand numarul de zile dorite:</h1>
+    <br>
+    <br>
+    <br>
+
+    <div class="card" style="width: 24rem; height:20rem;">
+  <div class="card-body">
+      <form>
+  <div class="form-row align-items-center">
+    <div class="col-auto my-1">
+      <label class="mr-sm-2" for="inlineFormCustomSelect" style="font-size: 32px;">Numar de zile:</label>
+      <select class="custom-select mr-sm-4" id="inlineFormCustomSelect">
+        <option selected>Choose...</option>
+         <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+      <option value="11">11</option>
+      <option value="12">12</option>
+      <option value="13">13</option>
+      <option value="14">14</option>
+      </select>
+    </div>
+<br>
+<br>
+<br>
+<br>
+
+  </div>
+          <br>
+          <br>
+          <br>
+         <a type="submit" class="btn btn-warning" href="{% url 'carApp:rent' %}" style="font-size: 25px;">Inchireaza!</a>
+</form>
+  </div>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</div>
+    <div align="center">
+        <b><a href="{% url 'carApp:lista_masini' %}"><input type="button" value="Back" class="btn btn-success"
+                                                            style="font-size: 20px;"/></a></b>
+    </div>
+</center>
+{% endblock %}

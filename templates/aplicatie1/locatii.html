@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+<center>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1>Locatii cu livrare/preluare GRATUITA:</h1>
+    <br>
+    <br>
+    <br>
+
+
+     <img src="/media/locatii-rentacar.jpg">
+    <br>
+    <br>
+    <div class="card border-dark mb-3" style="max-width: 75rem;">
+  <div class="card-body">
+    <p class="card-text"><h4>Iti livram si preluam GRATUIT masina inchiriata din urmatoarele orase: Bucuresti, Ploiesti,
+      Targoviste, Brasov, Buzau, Constanta, Bacau, Galati, Iasi, Craiova, Sibiu, Cluj-Napoca, Targu-Mures, Timisoara si Arad.</h4>
+   </p>
+  </div>
+
+</div>
+    <div align="center">
+        <b><a href="{% url 'carApp:lista_masini' %}"><input type="button" value="Back" class="btn btn-success"
+                                                            style="font-size: 20px;"/></a></b>
+    </div>
+</center>
+{% endblock %}

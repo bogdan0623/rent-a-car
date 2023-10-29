@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+<center>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1>Factura a fost trimisa pe adresa dvs. de email!</h1>
+    <h3>In cazul oricarei nelamuriri nu ezitati sa ne contactati.</h3>
+    <h2>Va multumim!</h2>
+    <br>
+
+        <img src="/media/messjpg.jpg" width="500"
+                                 height="460">
+
+<!--    <a class="btn btn-warning" href="{% url 'carApp:factura' %}" style="font-size: 20px;">Trimite factura!</a>-->
+    <br>
+    <br>
+    <br>
+<!--    <div class="card border-success mb-3" style="max-width: 63rem;">-->
+<!--&lt;!&ndash;  <div class="card-body text-success">&ndash;&gt;-->
+<!--&lt;!&ndash;    <p class="card-text"><h4>Rezervă acum și poți modifica rezervarea oricând</h4>&ndash;&gt;-->
+<!--&lt;!&ndash;    <h4>Ești nevoit să alegi o altă dată? Amână rezervarea.</h4>&ndash;&gt;-->
+
+<!--&lt;!&ndash;    <h4>Schimbări de planuri? Alege o mașină de închiriat în altă destinație.</h4>&ndash;&gt;-->
+
+<!--&lt;!&ndash;    <h4>Poți modifica rezervarea telefonic. Nu vei plăti taxe de administrare pentru modificare.</h4>&ndash;&gt;-->
+
+<!--&lt;!&ndash;    <h4>Livrăm mașina închiriată la data aleasă de tine, 24/7 non-stop.</h4></p>&ndash;&gt;-->
+<!--&lt;!&ndash;  </div>&ndash;&gt;-->
+
+<!--</div>-->
+    <div align="center">
+        <b><a href="{% url 'carApp:lista_masini' %}"><input type="button" value="Back" class="btn btn-success"
+                                                            style="font-size: 20px; font-family:courier;"/></a></b>
+    </div>
+</center>
+{% endblock %}

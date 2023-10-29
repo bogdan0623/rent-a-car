@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<tbody>
+
+<br/>
+{% if request.user.is_superuser is False %}
+<div  align="center">
+    <h1>{{ object.marca }} {{ object.model }} </h1>
+    <h3> Locatie: {{ object.location }} </h3>
+<div class="card border-dark md-1" style="max-width: 1300px;" align="left" >
+  <div class="card">
+
+
+  <div class="card-body">
+     <div class="card-deck">
+  <div class="card bg-light mb-3">
+
+    <div class="card-body">
+      <h5 class="card-title">Marca</h5>
+<p class="card-text" style="font-size: 26px;"><b>{{ object.marca }}</b></p>    </div>
+  </div>
+  <div class="card bg-light mb-3">
+
+    <div class="card-body">
+      <h5 class="card-title">Model</h5>
+<p class="card-text" style="font-size: 26px;"><b>{{ object.model }}</b></p>    </div>
+  </div>
+  <div class="card bg-light mb-3">
+    <div class="card-body">
+      <h5 class="card-title">An</h5>
+        <p class="card-text" style="font-size: 26px;"><b>{{ object.an_aparitie}}</b></p>
+    </div>
+  </div>
+</div>
+      <br>
+      <br>
+           <div class="card-deck">
+  <div class="card bg-light mb-3">
+
+    <div class="card-body">
+      <h5 class="card-title">Combustibil</h5>
+<p class="card-text" style="font-size: 26px;"><b>{{ object.combustibil }}</b></p>    </div>
+  </div>
+  <div class="card bg-light mb-3">
+
+    <div class="card-body">
+      <h5 class="card-title">Motor</h5>
+<p class="card-text" style="font-size: 26px;"><b>{{ object.motorizare }}</b></p>    </div>
+  </div>
+  <div class="card bg-light mb-3">
+    <div class="card-body">
+      <h5 class="card-title">Consum</h5>
+        <p class="card-text" style="font-size: 26px;"><b>{{ object.consum}}</b></p>
+    </div>
+  </div>
+</div>
+
+            <br>
+      <br>
+           <div class="card-deck">
+  <div class="card bg-light mb-3">
+
+    <div class="card-body">
+      <h5 class="card-title">Cutie de viteze</h5>
+<p class="card-text" style="font-size: 26px;"><b>{{ object.cutie }}</b></p>    </div>
+  </div>
+  <div class="card bg-light mb-3">
+
+    <div class="card-body">
+      <h5 class="card-title">Cai putere</h5>
+<p class="card-text" style="font-size: 26px;"><b>{{ object.cai_putere }}</b></p>    </div>
+  </div>
+  <div class="card bg-light mb-3">
+    <div class="card-body">
+      <h5 class="card-title">Pret</h5>
+        <p class="card-text" style="font-size: 26px;"><b>{{ object.pret}}</b></p>
+    </div>
+  </div>
+</div>
+      <br>
+      <br>
+           <div align="center"><a class="btn btn-info" href="{% url 'carApp:inchiriere' %}" style="font-size: 26px;">VREAU SA INCHIRIEZ!</a></div>
+  </div>
+  <img class="card-img-bottom" src="{{ object.poza.url }}" class="img-fluid rounded-start" alt="Card image cap">
+</div>
+</div>
+    </div>
+<br>
+<div align="center">
+<b><a href="{% url 'carApp:lista_masini' %}"><input type="button" value="Back" class="btn btn-success" style="font-size: 20px;" /></a></b>
+    </div>
+{% endif %}
+</tbody>
+
+{% endblock %}
